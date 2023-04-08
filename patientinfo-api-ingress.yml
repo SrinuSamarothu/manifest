@@ -1,0 +1,43 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: patientinfo-api-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/PatientInfo/GetallPatientInfo
+        pathType: Prefix
+        backend:
+          service:
+            name: patientinfo-api-service
+            port:
+              number: 7003
+      - path: /api/PatientInfo/GetPatientInfobyemail
+        pathType: Prefix
+        backend:
+          service:
+            name: patientinfo-api-service
+            port:
+              number: 7003
+      - path: /api/PatientInfo/GetPatientInfobyId
+        pathType: Prefix
+        backend:
+          service:
+            name: patientinfo-api-service
+            port:
+              number: 7003
+      - path: /api/PatientInfo/AddnewPatientinfo
+        pathType: Prefix
+        backend:
+          service:
+            name: patientinfo-api-service
+            port:
+              number: 7003
+      - path: /api/PatientInfo/UpdatePatientinfo
+        pathType: Prefix
+        backend:
+          service:
+            name: patientinfo-api-service
+            port:
+              number: 7003
