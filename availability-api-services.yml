@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: availability-api-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: availability-api-deployment
+  ports:
+    - targetPort: 80
+      port: 7006

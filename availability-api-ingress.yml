@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: availability-api-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/PhysicianAvailability/GetSchedule
+        pathType: Prefix
+        backend:
+          service:
+            name: availability-api-service
+            port:
+              number: 7006
+      - path: /api/PhysicianAvailability/AddSchedule
+        pathType: Prefix
+        backend:
+          service:
+            name: availability-api-service
+            port:
+              number: 7006
+      - path: /api/PhysicianAvailability/UpdateAllSchedules
+        pathType: Prefix
+        backend:
+          service:
+            name: availability-api-service
+            port:
+              number: 7006

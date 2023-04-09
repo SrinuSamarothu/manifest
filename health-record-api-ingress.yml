@@ -1,0 +1,92 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: health-record-api-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/History/GetCompleteHistory
+        pathType: Prefix
+        backend:
+          service:
+            name: health-record-api-service
+            port:
+              number: 7005
+      - path: /api/History/getBasics
+        pathType: Prefix
+        backend:
+          service:
+            name: health-record-api-service
+            port:
+              number: 7005
+      - path: /api/Medication/AddMedicalRecords
+        pathType: Prefix
+        backend:
+          service:
+            name: health-record-api-service
+            port:
+              number: 7005
+      - path: /api/Medication/updatemedication
+        pathType: Prefix
+        backend:
+          service:
+            name: health-record-api-service
+            port:
+              number: 7005
+      - path: /api/PatientAllergy/AddAllergyRecords
+        pathType: Prefix
+        backend:
+          service:
+            name: health-record-api-service
+            port:
+              number: 7005
+      - path: /api/PatientAllergy/modifyAllergy
+        pathType: Prefix
+        backend:
+          service:
+            name: health-record-api-service
+            port:
+              number: 7005
+      - path: /api/PBRecord/AddPBRecords
+        pathType: Prefix
+        backend:
+          service:
+            name: health-record-api-service
+            port:
+              number: 7005
+      - path: /api/PBRecord/modify
+        pathType: Prefix
+        backend:
+          service:
+            name: health-record-api-service
+            port:
+              number: 7005
+      - path: /api/PHRecord/AddPHRecords
+        pathType: Prefix
+        backend:
+          service:
+            name: health-record-api-service
+            port:
+              number: 7005
+      - path: /api/PHRecord/updateHr
+        pathType: Prefix
+        backend:
+          service:
+            name: health-record-api-service
+            port:
+              number: 7005
+      - path: /api/PTest/AddTestRecords
+        pathType: Prefix
+        backend:
+          service:
+            name: health-record-api-service
+            port:
+              number: 7005
+      - path: /api/PTest/modifyTest
+        pathType: Prefix
+        backend:
+          service:
+            name: health-record-api-service
+            port:
+              number: 7005
