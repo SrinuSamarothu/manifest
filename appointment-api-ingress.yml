@@ -1,0 +1,57 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: appointment-api-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/Appointment/AddAppointmentByPatient
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 7007
+      - path: /api/Appointment/UpdateStatusByDoctor
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 7007
+      - path: /api/Appointment/UpdateNurseIdByNurse
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 7007
+      - path: /api/Appointment/GetAppointmentsByDoctorId
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 7007
+      - path: /api/Appointment/GetAppointmentsByNurseId
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 7007
+      - path: /api/Appointment/GetAppointmentsByStatus
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 7007
+      - path: /api/Appointment/GetAppointmentsByStatusOne
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 7007
