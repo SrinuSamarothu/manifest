@@ -6,6 +6,13 @@ spec:
   rules:
   - http:
       paths:
+      - path: /api/Appointment/GetAppointmentsByPatientId
+        pathType: Prefix
+        backend:
+          service:
+            name: appointment-api-service
+            port:
+              number: 7007
       - path: /api/Appointment/AddAppointmentByPatient
         pathType: Prefix
         backend:
