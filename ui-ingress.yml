@@ -13,3 +13,31 @@ spec:
               name: ui-service
               port:
                 number: 9999
+        - path: /register
+          pathType: Prefix
+          backend: 
+            service:
+              name: ui-service
+              port:
+                number: 9999
+        - path: /login
+          pathType: Prefix
+          backend: 
+            service:
+              name: ui-service
+              port:
+                number: 9999
+        - path: /admin-dashboard
+          pathType: Prefix
+          backend: 
+            service:
+              name: ui-service
+              port:
+                number: 9999
+        - path: /admin-dashboard
+          pathType: Prefix
+          backend: 
+            service:
+              name: ui-service
+              port:
+                number: 9999
